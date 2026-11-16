@@ -79,17 +79,54 @@ body.show #hud{font-size:15px}
 #sbk{width:58px}
 #sset{width:100%;font-size:15px!important;padding:10px!important}
 #sb svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* стили кнопок: 1 простой, 2 средний (исходный), 3 детализированный */
+body[data-st="3"] #ov{background:rgba(16,18,24,.72);border:1px solid rgba(255,255,255,.12);box-shadow:0 4px 14px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.08);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+body[data-st="3"] #ov button,body[data-st="3"] .el,body[data-st="3"] #gear,body[data-st="3"] #card button,body[data-st="3"] #tc button{border:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,0) 55%),var(--card);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 -1px 0 rgba(0,0,0,.18),0 1px 2px rgba(0,0,0,.3);opacity:1;transition:transform .08s,box-shadow .12s,border-color .12s,filter .12s}
+body[data-st="3"] #ov button:active,body[data-st="3"] .el:active,body[data-st="3"] #gear:active,body[data-st="3"] #card button:active,body[data-st="3"] #tc button:active{transform:translateY(1px) scale(.97);box-shadow:inset 0 2px 5px rgba(0,0,0,.4)}
+body[data-st="3"] #ov button.on,body[data-st="3"] .el.on,body[data-st="3"] .el.hot{border-color:rgba(0,0,0,.3);background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0) 60%),var(--ac);color:var(--bg);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -2px 0 rgba(0,0,0,.22),0 0 10px rgba(255,120,40,.35)}
+body[data-st="3"] .el.on i.n,body[data-st="3"] .el.hot i.n{color:var(--bg)}
+body[data-st="3"] #ov button:focus-visible,body[data-st="3"] .el:focus-visible,body[data-st="3"] #gear:focus-visible,body[data-st="3"] #card button:focus-visible,body[data-st="3"] #tc button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+body[data-st="3"] #st #sb button{background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.02)),rgba(16,18,24,.88);border:1px solid rgba(255,255,255,.35);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 3px 0 rgba(0,0,0,.65),0 6px 16px rgba(0,0,0,.4);transition:transform .08s,box-shadow .08s}
+body[data-st="3"] #st #sb button:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 1px 0 rgba(0,0,0,.65)}
+body[data-st="3"] #sb #sp1{background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0) 55%),var(--ac)!important;border-color:rgba(255,255,255,.45)!important}
+body[data-st="3"] #xcard button{background-image:linear-gradient(180deg,rgba(255,255,255,.1),transparent 55%);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 2px rgba(0,0,0,.3)}
+body[data-st="3"] #xcard button:active{transform:translateY(1px);box-shadow:inset 0 2px 4px rgba(0,0,0,.4)}
+@media(hover:hover){body[data-st="3"] #ov button:hover,body[data-st="3"] .el:hover,body[data-st="3"] #gear:hover,body[data-st="3"] #card button:hover,body[data-st="3"] #tc button:hover{border-color:var(--ac);filter:brightness(1.1)}}
+body[data-st="1"] #panel *,body[data-st="1"] #ov,body[data-st="1"] #ov *,body[data-st="1"] #spd,body[data-st="1"] #hud,body[data-st="1"] #xp,body[data-st="1"] #xp *,body[data-st="1"] #xg,body[data-st="1"] #card,body[data-st="1"] #card *,body[data-st="1"] #tc,body[data-st="1"] #tc *,body[data-st="1"] #st button,body[data-st="1"] #xcard,body[data-st="1"] #xcard *,body[data-st="1"] .tp,body[data-st="1"] .wr,body[data-st="1"] .pr select,body[data-st="1"] #gear{border-radius:0!important}
+body[data-st="1"] #ov{background:var(--bg);border:1px solid var(--bd);padding:4px;gap:4px}
+body[data-st="1"] #ov button,body[data-st="1"] .el,body[data-st="1"] #gear,body[data-st="1"] #card button,body[data-st="1"] #tc button{border:1px solid var(--bd);background:var(--card);box-shadow:none;opacity:1}
+body[data-st="1"] #ov button:active,body[data-st="1"] .el:active,body[data-st="1"] #gear:active,body[data-st="1"] #card button:active,body[data-st="1"] #tc button:active{background:var(--fg);color:var(--bg)}
+body[data-st="1"] #ov button.on,body[data-st="1"] .el.on,body[data-st="1"] .el.hot{background:var(--ac);border-color:var(--ac);color:var(--bg);box-shadow:none}
+body[data-st="1"] .el.on i.n,body[data-st="1"] .el.hot i.n{color:var(--bg)}
+body[data-st="1"] .el{font-size:11px}
+body[data-st="1"] #spd{background:var(--bg);border:1px solid var(--bd)}
+body[data-st="1"] #ov #spd{border:0;background:none}
+body[data-st="1"] #hud,body[data-st="1"] #xp{background:var(--bg);color:var(--fg);border:1px solid var(--bd)}
+body[data-st="1"] #xp button{border-color:var(--bd)}
+body[data-st="1"] #st #sb button{border:1px solid #fff;background:#000;text-transform:uppercase;letter-spacing:.08em;font-size:16px}
+body[data-st="1"] #st #sb button:active{background:#fff;color:#000}
+body[data-st="1"] #sb #sp1{background:var(--ac)!important;border-color:var(--ac)!important}
+body[data-st="1"] #stt{text-shadow:none}
+body[data-st] #stl button.sel{border-color:var(--ac)!important;box-shadow:0 0 0 1px var(--ac)!important;font-weight:700}
+body[data-st="1"] #stl button.sel{background:var(--ac)!important;color:var(--bg)}
+#field>#gear{position:absolute;right:8px;top:8px;width:42px;height:42px;padding:0;z-index:3}
+#field>#gear svg{width:22px;height:22px}
+#ov{top:58px}
+#imp,.cd{width:100%;box-sizing:border-box;height:58px;background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:8px;padding:4px;font:11px monospace;resize:none}
+.wh{font-weight:700;margin-top:6px;color:var(--fg)}
+#hm svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
-<body>
-<div id="field"><canvas id="c"></canvas><div id="tip"></div><div id="ov" class="cl"><button id="tg" aria-label="Панель"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h14"/></svg></button><button id="bh" aria-label="Тепловая карта"><svg viewBox="0 0 24 24"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg></button><button id="bs" aria-label="Статистика"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></button><button id="bd" aria-label="Рука"><svg viewBox="0 0 24 24"><path d="M8 13V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-3l-2-4a1.5 1.5 0 0 1 3-1l2 2"/></svg></button><button id="bn" aria-label="Нейтроны"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/></svg></button><button id="bx" aria-label="Эксперименты"><svg viewBox="0 0 24 24"><path d="M10 3h4M11 3v6l-5 9a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-5-9V3"/></svg></button><button id="bm" aria-label="Режим показа"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button></div><div id="spd"><input id="sp" type="range" min="0" max="7" value="4" aria-label="Скорость"><b id="spv">×1</b></div><div id="hud" hidden></div><div id="xp" hidden><b id="xt"></b><canvas id="xg" width="170" height="70"></canvas><div id="xr"></div><button id="xs">Закрыть</button></div></div>
+<body data-st="3">
+<div id="field"><canvas id="c"></canvas><div id="tip"></div><button id="gear" aria-label="Настройки"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button><div id="ov" class="cl"><button id="tg" aria-label="Панель"><svg viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h14"/></svg></button><button id="bh" aria-label="Тепловая карта"><svg viewBox="0 0 24 24"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg></button><button id="bs" aria-label="Статистика"><svg viewBox="0 0 24 24"><path d="M5 20V10M12 20V4M19 20v-7"/></svg></button><button id="bd" aria-label="Рука"><svg viewBox="0 0 24 24"><path d="M8 13V6a1.5 1.5 0 0 1 3 0v5M11 11V4.5a1.5 1.5 0 0 1 3 0V11M14 11V6a1.5 1.5 0 0 1 3 0v8a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-3l-2-4a1.5 1.5 0 0 1 3-1l2 2"/></svg></button><button id="bn" aria-label="Нейтроны"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.5"/><ellipse cx="12" cy="12" rx="9" ry="4"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)"/></svg></button><button id="bx" aria-label="Эксперименты"><svg viewBox="0 0 24 24"><path d="M10 3h4M11 3v6l-5 9a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-5-9V3"/></svg></button><button id="bm" aria-label="Режим показа"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button></div><div id="spd"><input id="sp" type="range" min="0" max="7" value="4" aria-label="Скорость"><b id="spv">×1</b></div><div id="hud" hidden></div><div id="xp" hidden><b id="xt"></b><canvas id="xg" width="170" height="70"></canvas><div id="xr"></div><button id="xs">Закрыть</button></div></div>
 <div id="panel">
   <div id="els"></div>
-  <div id="ctl"><span>Кисть</span><input id="sz" type="range" min="1" max="8" value="3"><button id="gear" aria-label="Настройки"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button></div>
+  <div id="ctl"><span>Кисть</span><input id="sz" type="range" min="1" max="8" value="3"></div>
 </div>
 <div id="st"><canvas id="sc"></canvas><div id="stt">Песочница</div><div id="sb"><div class="r"><button id="sp1">Играть</button><button id="sbk" aria-label="Справочник"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19a2 2 0 0 1 2-2h13"/></svg></button></div><button id="sset"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>Настройки</button></div></div>
 <div id="menu" hidden><div id="card">
   <div class="hd"><b>Настройки</b><button id="x" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
+  <button id="hm"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>На стартовый экран</button>
   <details class="gd"><summary>Руководство</summary><div>
 <b>Как не взорвать реактор</b>
 • Уран-235 плавится при 1150°, а расплавленный уран выше 2000° взрывается. Держи топливо холоднее 900°: максимальная температура видна в окне статистики.<br>
@@ -102,6 +139,8 @@ body.show #hud{font-size:15px}
 <b>Защита от радиации</b>
 • Уровень излучения показан у курсора и в окне статистики. Между источником и собой ставь свинец (ослабляет в 2,2 раза на клетку) или бетон (в 1,4 раза и ещё гасит нейтроны). Вода, металл и графит помогают слабее.<br>
 • Самое опасное: отработанное топливо и расплавленный уран. Храни их за толстой стенкой.
+<b>Показ радиации</b>
+• Кнопка с лучами в мини-панели включает подсветку излучения поверх поля. Чем сильнее излучение, тем ярче и краснее: зелёный слабое, жёлтый среднее, красный сильное. Свинец и бетон ослабляют излучение, поэтому за стенкой подсветка гаснет. Расчёт тот же, что у датчика у курсора.
 <b>Электричество и турбина</b>
 • Пар превращается в воду на турбине и вращает её. Соседние клетки турбины работают как одно тело. Ток идёт по проводам, металлу и ртути. Насос и лампа работают только под током. Насос рисуй линией: он качает в ту сторону, куда ведёшь палец, а полосы на нём бегут по направлению потока. Кнопка «Стержни» выводит все борные стержни: мощность растёт, а если ввести их обратно, реактор гаснет. Нейтроны на экране: жёлтые быстрые, голубые медленные (тепловые), за ними тянется след. Кнопка «Звук» включает счётчик Гейгера (щёлки чаще там, где выше излучение у курсора) и звук взрывов.
 <b>Охлаждающий контур</b>
@@ -143,20 +182,31 @@ body.show #hud{font-size:15px}
 • Порох взрывается от огня, нагрева выше 180°, ударной волны и батареи. Радиус: 1 плюс 1 за каждый пиксель пороха. Расплавленные уран, плутоний и торий выше 2000° дают радиус 10 плюс 5 за каждый радиоактивный пиксель, батарея добавляет 5. Всё взрывоопасное рядом (зазор до 2 клеток) сливается в один взрыв, максимум 70.<br>
 • Взрыв обращает центр в огонь, края в огонь и дым. Твёрдые обломки разлетаются и падают камнем, дерево и растения горят, лёд становится водой. Ударная волна поджигает масло, дерево, растения и семена, сдувает газы, рвёт материалы и взрывает соседний порох.<br>
 • Кран выдаёт выбранный материал: вниз, а газы и огонь вверх.
+<b>Электризация</b>
+• Заряд тела в игре измеряется в условных единицах. Красноватое свечение это положительный заряд, синеватое отрицательный, чем ярче, тем сильнее. Кнопка «Заряды» в мини-панели включает и выключает подсветку, значение у курсора есть в блоке статистики. Суммарный заряд сохраняется: сколько получило одно тело, столько потеряло другое.<br>
+• Трение: когда частица движется и трётся о другое вещество, они заряжаются разноимённо. Положительно заряжаются стекло, лёд, снег, песок и камень, отрицательно масло, растения, семена и почва. Сыпь песок на дерево и смотри на заряды.<br>
+• Инструменты «Заряд +» и «Заряд −» работают как стеклянная и эбонитовая палочки: заряжают то, чего касаются. Заряжать можно только вещество, воздух заряда не держит.<br>
+• Одноимённые заряды отталкиваются, разноимённые притягиваются. Заряженный песок, вода и другие подвижные частицы сами движутся друг к другу или расталкиваются.<br>
+• Проводники (металлы, вода, графит, ртуть, уран) заряд не держат: он растекается по телу, а если проводник касается дна поля (заземление), уходит в землю. Диэлектрики (стекло, песок, дерево, лёд, масло) заряд держат, но он медленно стекает. Если диэлектрик касается проводника, часть заряда переходит в проводник.<br>
+• Разряд: при сильном заряде рядом с проводником или телом противоположного знака проскакивает искра. Заряды выравниваются, место нагревается, а порох, масло и газ могут загореться.<br>
+• В сохранённый мир заряды не записываются.
+<b>Сохранения и разные устройства</b>
+• Размер поля зависит от экрана, поэтому на телефоне и на компьютере он разный. Сохранения в списке разделены на телефонные и компьютерные.<br>
+• Мир с другого устройства загружается по центру у нижнего края. Если поле меньше, края обрежутся, и постройки могут выглядеть сломанными: реактор без стенки, трубы и провода с оборванными концами. Если поле больше, вокруг останется пустое место. Лучше всего загружать миры с того же типа устройства.<br>
+• Чтобы перенести мир, нажми «Код» у сохранения и вставь код в «Импорт» на другом устройстве. Обычные сохранения хранятся только в браузере и сами между устройствами не передаются.
 </div></details>
+  <details class="gd" id="tpd"><summary>Шаблоны и эксперименты</summary><div id="tl" style="display:flex;flex-direction:column;gap:8px"></div><div id="tmsg" style="color:#d9480f;font-size:13px"></div></details>
   <label class="row"><span>Без границ (материалы вылетают за экран)</span><input type="checkbox" id="co"></label>
+  <div id="stw" style="display:flex;flex-direction:column;gap:6px"><span>Стиль кнопок</span><div id="stl" style="display:flex;gap:6px"></div></div>
   <div class="hd"><b>Миры</b><button id="sv"><svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>Сохранить</button></div>
   <div id="wl"></div><div id="wm"></div>
-</div></div>
-<div id="tm" hidden><div id="tc">
-  <div class="hd"><b>Шаблоны и эксперименты</b><button id="tx" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button></div>
-  <div id="tl" style="display:flex;flex-direction:column;gap:8px"></div><div id="tmsg" style="color:#d9480f;font-size:13px"></div>
+  <div style="display:flex;flex-direction:column;gap:6px"><b>Импорт мира</b><textarea id="imp" placeholder="Вставь код мира с другого устройства"></textarea><button id="imb">Импортировать</button></div>
 </div></div>
 <script>
 (()=>{
 const C=3,AMB=20;
 const N=['','Песок','Вода','Дерево','Камень','Масло','Огонь','Лава','Лёд','','','Металл','Снег','Порох','Растение','Нагреватель','Охладитель','Газ','Пламя','Семена','Почва','Кран','Уран-235','Ртуть','Галлий','Кислота','','Уран-238','Графит','Источник n','+ Темп.','− Темп.','','','Плутоний-239','Торий-232','Уран-233','Тяжёлая вода','Бор'];
-N[60]='+ Темп.';N[39]='Активный торий';N[52]='Турбина';N[53]='Бетон';N[54]='Свинец';N[55]='Насос';N[56]='Радиоактивный образец';N[57]='Резистор';N[50]='Расплавленный плутоний';N[51]='Расплавленный торий';N[9]='Дым';N[10]='Пар';N[26]='Жидкий галлий';N[32]='Активный U-238';N[33]='Расплавленный уран';N[40]='Отработанное топливо';N[41]='Расплавленный металл';N[42]='Расплавленное стекло';N[43]='Стекло';N[44]='Твёрдая ртуть';N[45]='Провод';N[46]='Батарея';N[47]='Лампа';N[48]='Выключатель';N[49]='Выключатель (вкл.)';N[61]='− Темп.';
+N[60]='+ Темп.';N[39]='Активный торий';N[52]='Турбина';N[53]='Бетон';N[54]='Свинец';N[55]='Насос';N[56]='Радиоактивный образец';N[57]='Резистор';N[50]='Расплавленный плутоний';N[51]='Расплавленный торий';N[9]='Дым';N[10]='Пар';N[26]='Жидкий галлий';N[32]='Активный U-238';N[33]='Расплавленный уран';N[40]='Отработанное топливо';N[41]='Расплавленный металл';N[42]='Расплавленное стекло';N[43]='Стекло';N[44]='Твёрдая ртуть';N[45]='Провод';N[46]='Батарея';N[47]='Лампа';N[48]='Выключатель';N[49]='Выключатель (вкл.)';N[61]='− Темп.';N[62]='Заряд +';N[63]='Заряд −';
 const COL=[[16,18,24],[222,190,110],[52,120,230],[133,88,48],[128,130,138],[84,62,104],[255,120,20],[230,70,20],[170,225,245],[92,92,100],[205,214,228],[150,160,176],[240,244,250],[66,66,74],[60,160,70],[204,72,72],[72,150,204],[150,220,150],[255,170,50],[176,196,76],[96,66,42],[90,95,105],[64,160,48],[200,205,215],[128,148,176],[160,255,60],[182,202,224]];
 // 1 песок 2 вода 3 дерево 4 камень 5 масло 6 огонь 7 лава 8 лёд 9 дым 10 пар 11 металл 12 снег 13 порох 14 растение 15 нагреватель 16 охладитель 17 газ
 const FALL=[0,1,1,0,1,1,0,1,0,0,0,0,1,1,0,0,0,0,0,1,1,0,1,1,0,1,1];
@@ -181,18 +231,18 @@ COL[27]=[88,104,60];COL[29]=[130,230,255];COL[34]=[210,80,200];COL[35]=[190,160,
 const lut=new Uint32Array(512);
 COL.forEach((c,t)=>{for(let v=0;v<8;v++){const f=t?.84+v*.045:1;lut[t*8+v]=((255<<24)|(Math.min(255,c[2]*f|0)<<16)|(Math.min(255,c[1]*f|0)<<8)|Math.min(255,c[0]*f|0))>>>0}});
 const cv=document.getElementById('c'),ctx=cv.getContext('2d'),fld=document.getElementById('field'),tip=document.getElementById('tip');
-let W=0,H=0,g,tp,st,src,cnt,img,buf,frame=0,sel=1,rad=3,down=false,px=0,py=0,hasP=false,hv=false,tapMode=false,lastTap=0,lx=0,ly=0,zm=1,ox=0,oy=0,panMode=false,panning=false,lx0=0,ly0=0,paused=false,showN=false,eras=false,opn=false,pw,stk,lamps=[],deb=[],sw=[],shk=0;
+let W=0,H=0,g,tp,st,src,cnt,img,buf,frame=0,sel=1,rad=3,down=false,px=0,py=0,hasP=false,hv=false,tapMode=false,lastTap=0,lx=0,ly=0,zm=1,ox=0,oy=0,panMode=false,panning=false,lx0=0,ly0=0,paused=false,showN=false,eras=false,opn=false,pw,stk,chA,ch,chv=true,spk=[],rv=false,rfD=null,rfW=0,rfH=0,rvT=0,lamps=[],deb=[],sw=[],shk=0;
 function fit(){
   const w=Math.max(20,Math.floor(fld.clientWidth/C)),h=Math.max(20,Math.floor(fld.clientHeight/C));
   if(w===W&&h===H)return;
   const og=g,ot=tp,os=src,oc=cnt,ow=W,oh=H;
-  W=w;H=h;g=new Uint8Array(W*H);tp=new Float32Array(W*H).fill(AMB);st=new Int32Array(W*H);src=new Uint8Array(W*H);cnt=new Uint16Array(W*H);pw=new Uint8Array(W*H);stk=new Int32Array(W*H);
+  W=w;H=h;g=new Uint8Array(W*H);tp=new Float32Array(W*H).fill(AMB);st=new Int32Array(W*H);src=new Uint8Array(W*H);cnt=new Uint16Array(W*H);pw=new Uint8Array(W*H);stk=new Int32Array(W*H);chA=new Uint8Array(W*H);ch=new Float32Array(W*H);
   if(og)for(let y=0;y<Math.min(H,oh);y++)for(let x=0;x<Math.min(W,ow);x++){g[y*W+x]=og[y*ow+x];tp[y*W+x]=ot[y*ow+x];src[y*W+x]=os[y*ow+x];cnt[y*W+x]=oc[y*ow+x]}
   cv.width=W;cv.height=H;img=ctx.createImageData(W,H);buf=new Uint32Array(img.data.buffer);
 }
 new ResizeObserver(fit).observe(fld);fit();
 
-function mv(a,b){let t=g[a];g[a]=g[b];g[b]=t;t=tp[a];tp[a]=tp[b];tp[b]=t;st[a]=st[b]=frame}
+function mv(a,b){let t=g[a];g[a]=g[b];g[b]=t;t=tp[a];tp[a]=tp[b];tp[b]=t;t=ch[a];ch[a]=ch[b];ch[b]=t;st[a]=st[b]=frame;rub(b)}
 function can(t,q){const u=g[q];return u===0||GAS[u]===1||(FALL[u]&&DENS[u]<DENS[t])}
 function nbr(p,x,y,k){return k===0?(x>0?p-1:-1):k===1?(x<W-1?p+1:-1):k===2?(y>0?p-W:-1):(y<H-1?p+W:-1)}
 function ignite(p,T){g[p]=6;tp[p]=T||700}
@@ -338,7 +388,7 @@ function react(p,t,T,x,y){
 let pend=[],fx=[],fxh=[],dl=[];
 const DX=[1,-1,0,0],DY=[0,0,1,-1];
 function blast(x0,y0,r){explode(x0,y0,Math.round(r*1.9));for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){const x=x0+dx,y=y0+dy;if(x<0||y<0||x>=W||y>=H||dx*dx+dy*dy>r*r)continue;const q=y*W+x;g[q]=Math.random()<.5?6:0;tp[q]=1600;cnt[q]=0}}
-function fission(q){nFis++;tp[q]+=200;for(let d=0;d<4&&pend.length<600;d++)if(Math.random()<.75){if(Math.random()<.08&&dl.length<1500)dl.push([frame+200+(Math.random()*900|0),q*4+d]);else pend.push(q*4+d)}if(++cnt[q]>=DEPL){g[q]=40;cnt[q]=0}}
+function fission(q){nFis++;tp[q]+=200;{const qx=q%W,qy=(q/W)|0;for(let a=-2;a<=2;a++)for(let b=-2;b<=2;b++){const X=qx+a,Y=qy+b;if(X>=0&&X<W&&Y>=0&&Y<H&&g[Y*W+X]===2)chA[Y*W+X]=8}}for(let d=0;d<4&&pend.length<600;d++)if(Math.random()<.75){if(Math.random()<.08&&dl.length<1500)dl.push([frame+200+(Math.random()*900|0),q*4+d]);else pend.push(q*4+d)}if(++cnt[q]>=DEPL){g[q]=40;cnt[q]=0}}
 function shoot(p){
   const d=p&3,s=p>>2;
   let dx=DX[d],dy=DY[d],cx=s%W,cy=(s/W)|0,th=false,rng=40;
@@ -415,6 +465,40 @@ function shock(){
 }
 function shakeUpd(){if(shk>.4){fld.style.transform='translate('+((Math.random()-.5)*shk).toFixed(1)+'px,'+((Math.random()-.5)*shk).toFixed(1)+'px)';shk*=.9}else if(shk){shk=0;fld.style.transform=''}}
 const CON=new Uint8Array(64);[11,23,41,45,46,47,49,52,55,57].forEach(t=>CON[t]=1);
+const TRI=new Int8Array(64);[[43,9],[8,7],[12,7],[1,6],[4,3],[53,2],[13,-2],[20,-3],[19,-3],[14,-4],[5,-6]].forEach(a=>TRI[a[0]]=a[1]);
+const CND=new Uint8Array(64);CON.forEach((v,i)=>{if(v)CND[i]=1});[2,22,23,24,25,26,27,28,34,35,36,37,41,44,54].forEach(t=>CND[t]=1);
+const QC=v=>Math.max(-100,Math.min(100,v));
+function nb4(p,x,y,k){return k===0?(x>0?p-1:-1):k===1?(x<W-1?p+1:-1):k===2?(y>0?p-W:-1):(y<H-1?p+W:-1)}
+// электризация трением: движущаяся частица трётся о соседей, заряды всегда равны и противоположны
+function rub(p){const t=g[p];if(!t||CND[t])return;const x=p%W,y=(p/W)|0;
+  for(let k=0;k<4;k++){const q=nb4(p,x,y,k);if(q<0)continue;const u=g[q];if(!u||CND[u]||u===t)continue;
+    const d=TRI[t]-TRI[u];if(d>-2&&d<2)continue;if(Math.random()<.4)continue;
+    const a=(d>0?1:-1)*(3+Math.abs(d));ch[p]=QC(ch[p]+a);ch[q]=QC(ch[q]-a)}}
+// искровой разряд
+function brk(p,x,y,c){let best=-1,bd=99;
+  for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++){if(!dx&&!dy)continue;const X=x+dx,Y=y+dy;if(X<0||Y<0||X>=W||Y>=H)continue;
+    const r=Y*W+X,u=g[r];if(!u||(CND[u]&&(CND[g[p]]||(Math.abs(dx)<2&&Math.abs(dy)<2))))continue;const ok=CND[u]?Math.abs(c)>55:(ch[r]*c<0&&Math.abs(c-ch[r])>70);if(!ok)continue;
+    const d=dx*dx+dy*dy;if(d<bd){bd=d;best=r}}
+  if(best<0)return;const m=(c+ch[best])/2;ch[p]=m;ch[best]=m;tp[p]+=60;tp[best]+=60;
+  if(spk.length<40)spk.push([x,y,best%W,(best/W)|0,4]);tick(.25)}
+// притяжение и отталкивание зарядов для подвижных частиц
+function frc(p,x,y,c){let fx=0,fy=0;
+  for(let dy=-3;dy<=3;dy++)for(let dx=-3;dx<=3;dx++){if(!dx&&!dy)continue;const X=x+dx,Y=y+dy;if(X<0||Y<0||X>=W||Y>=H)continue;
+    const r=Y*W+X,o=ch[r];if(!o||!g[r])continue;const d2=dx*dx+dy*dy,f=-c*o/(d2*Math.sqrt(d2));fx+=dx*f;fy+=dy*f}
+  const m=Math.hypot(fx,fy);if(m<20||Math.random()>Math.min(.5,m/300))return;
+  const mx2=Math.abs(fx)>Math.abs(fy),r=mx2?nb4(p,x,y,fx>0?1:0):nb4(p,x,y,fy>0?3:2);
+  if(r>=0&&g[r]===0&&!st[p])mv(p,r)}
+function estat(){const n=W*H;
+  for(let p=0;p<n;p++){const q=ch[p];if(!q)continue;const t=g[p];if(!t){ch[p]=0;continue}
+    const x=p%W,y=(p/W)|0;
+    if(CND[t]){if(y===H-1){ch[p]=0;continue}
+      for(let k=0;k<4;k++){const r=nb4(p,x,y,k);if(r>=0&&CND[g[r]]){const d=(ch[r]-ch[p])*.3;ch[p]+=d;ch[r]-=d}}}
+    else{ch[p]=q*.9998;
+      for(let k=0;k<4;k++){const r=nb4(p,x,y,k);if(r>=0&&CND[g[r]]){const m=ch[p]*.3;ch[p]-=m;ch[r]+=m}}}
+    const c=ch[p];if(Math.abs(c)<.05){ch[p]=0;continue}
+    if(Math.abs(c)>45)brk(p,x,y,c);
+    if((FALL[t]||LIQ[t])&&Math.abs(c)>6)frc(p,x,y,c)}}
+
 function elec(live){
   pw.fill(0);lamps=[];let sp=0;const n=W*H;
   if(!tvis||tvis.length!==n)tvis=new Uint8Array(n);else tvis.fill(0);
@@ -515,9 +599,19 @@ function draw(){
       c=((255<<24)|((((c>>16)&255)*(1-.7*k))<<16)|((((c>>8)&255)*(1-.5*k)+70*k)<<8)|(r+(255-r)*k))>>>0;
     }
     if(T>420&&t&&t!==6&&t!==7&&t!==18)c=mx(c,HC(T),Math.min(.85,(T-420)/900));else if(T<-5&&t)c=mx(c,0xFFFFE6C8,Math.min(.5,(-5-T)/150));
+    if(chv&&ch[p]&&t){const q=ch[p],a=Math.abs(q)<1?0:Math.min(.75,.1+Math.abs(q)*.05);c=mx(c,q>0?0xFF4040FF:0xFFFF8A40,a);if(Math.abs(q)>40&&Math.random()<.15)c=0xFFFFFFFF}
+    if(chA[p]){if(t===2)c=mx(c,0xFFFFD264,chA[p]*.06);chA[p]--}
     buf[p]=c;
   }
   
+if(rv){if(!rfD||++rvT>=6){radField();rvT=0}
+    for(let y=0;y<H;y++){const gy=(y-1)/RB,y0=Math.max(0,Math.min(rfH-1,Math.floor(gy))),y1=Math.min(rfH-1,y0+1),ty=Math.max(0,Math.min(1,gy-y0));
+      for(let x=0;x<W;x++){const gx=(x-1)/RB,x0=Math.max(0,Math.min(rfW-1,Math.floor(gx))),x1=Math.min(rfW-1,x0+1),tx=Math.max(0,Math.min(1,gx-x0));
+        const a=rfD[y0*rfW+x0],b=rfD[y0*rfW+x1],c2=rfD[y1*rfW+x0],d=rfD[y1*rfW+x1],v=(a+(b-a)*tx)*(1-ty)+(c2+(d-c2)*tx)*ty;
+        if(v<.04)continue;const p=y*W+x;buf[p]=mx(buf[p],v<.5?mx(0xFF50E678,0xFF28E6F5,v*2):mx(0xFF28E6F5,0xFF3C3CFF,(v-.5)*2),Math.min(.7,v*.9))}}}
+  for(let i=spk.length-1;i>=0;i--){const e=spk[i],n2=Math.max(Math.abs(e[2]-e[0]),Math.abs(e[3]-e[1]),1);
+    for(let j=0;j<=n2;j++){const X=Math.round(e[0]+(e[2]-e[0])*j/n2)+(Math.random()<.5?0:1),Y=Math.round(e[1]+(e[3]-e[1])*j/n2);if(X>=0&&Y>=0&&X<W&&Y<H)buf[Y*W+X]=0xFFFFF0D0}
+    if(--e[4]<=0)spk.splice(i,1)}
   fxh.unshift(fx);if(fxh.length>6)fxh.pop();fx=[];
   for(let a=fxh.length-1;a>=0;a--){const arr=fxh[a],f=a?.55*(1-a/6):1;for(let i=0;i<arr.length;i++){const v=arr[i],q=v>>1;if(a&&g[q])continue;buf[q]=sh(v&1?0xFFFFC86E:0xFF8CEBFF,f)}}
   if(!hv)for(let i=0;i<lamps.length;i++){const p=lamps[i],x=p%W,y=(p/W)|0;
@@ -536,7 +630,8 @@ function paint(cx,cy){
     if(dx*dx+dy*dy>rad*rad)continue;
     const x=cx+dx,y=cy+dy;if(x<0||y<0||x>=W||y>=H)continue;
     const p=y*W+x;
-    if(s>59)tp[p]=Math.max(-150,Math.min(1500,tp[p]+(s===60?25:-25)));
+    if(s>61){if(g[p])ch[p]=Math.max(-100,Math.min(100,ch[p]+(s===62?10:-10)))}
+    else if(s>59)tp[p]=Math.max(-150,Math.min(1500,tp[p]+(s===60?25:-25)));
     else if(s===0){g[p]=0;tp[p]=AMB;src[p]=0;cnt[p]=0}
     else if(SOLID[s]||(g[p]===0&&Math.random()<.4)){g[p]=s;cnt[p]=0;tp[p]=BT[s]??AMB;if(s===55){src[p]=pdir;if(!pdirSet)psc.push(p)}}
   }
@@ -604,9 +699,10 @@ function btn(label,swatch,fn,ico){
   b.innerHTML='<i'+(swatch==='var(--bd)'?' class="n"':'')+' style="background:'+swatch+'">'+(ico?'<svg viewBox="0 0 24 24">'+ico+'</svg>':'')+'</i>'+label;
   b.onclick=()=>fn(b);els.appendChild(b);return b;
 }
+ICO[62]='<path d="M12 6v12M6 12h12"/>';ICO[63]='<path d="M6 12h12"/>';
 const sels=[];
-[1,20,19,2,3,4,5,6,18,7,8,12,11,43,45,46,47,48,52,55,57,53,54,56,13,17,22,27,28,29,34,35,36,37,38,23,24,25,15,16,60,61,0].forEach(t=>{
-  const sw=t>59?(t===60?'linear-gradient(135deg,#f59e0b,#dc2626)':'linear-gradient(135deg,#60a5fa,#2563eb)'):t?'rgb('+COL[t]+')':'repeating-conic-gradient(#888 0 25%,#ccc 0 50%) 0 0/10px 10px';
+[1,20,19,2,3,4,5,6,18,7,8,12,11,43,45,46,47,48,52,55,57,53,54,56,13,17,22,27,28,29,34,35,36,37,38,23,24,25,15,16,60,61,62,63,0].forEach(t=>{
+  const sw=t>59?(t===60?'linear-gradient(135deg,#f59e0b,#dc2626)':t===61?'linear-gradient(135deg,#60a5fa,#2563eb)':t===62?'linear-gradient(135deg,#fecaca,#ef4444)':'linear-gradient(135deg,#bfdbfe,#3b82f6)'):t?'rgb('+COL[t]+')':'repeating-conic-gradient(#888 0 25%,#ccc 0 50%) 0 0/10px 10px';
   const b=btn(t?N[t]:'Ластик',sw,b=>{sel=t;sels.forEach(x=>x.classList.remove('on'));b.classList.add('on')},ICO[t]);
   if(!t)b.classList.add('er');
   sels.push(b);if(t===sel)b.classList.add('on');
@@ -614,10 +710,21 @@ const sels=[];
 btn('Увеличить','var(--bd)',()=>zoomAt(fld.clientWidth/2,fld.clientHeight/2,1.5),ICO.zi);
 btn('Уменьшить','var(--bd)',()=>zoomAt(fld.clientWidth/2,fld.clientHeight/2,1/1.5),ICO.zo);
 btn('Кран','linear-gradient(135deg,#9ca3af,#4b5563)',b=>{tapMode=!tapMode;b.classList.toggle('hot',tapMode)},ICO.tap);
-ovb('Стержни',ICO[38],b=>{rodsOut=!rodsOut;b.classList.toggle('on',rodsOut);tip.textContent=rodsOut?'Стержни выведены: бор не поглощает нейтроны':'Стержни введены: бор гасит реакцию'});
+const rb=ovb('Стержни',ICO[38],b=>{rodsOut=!rodsOut;b.classList.toggle('on',rodsOut);tip.textContent=rodsOut?'Стержни выведены: бор не поглощает нейтроны':'Стержни введены: бор гасит реакцию'});
 ovb('Звук','<path d="M4 9v6h4l5 4V5L8 9zM16 9a4 4 0 0 1 0 6"/>',b=>{snd=!snd;b.classList.toggle('on',snd);if(snd){aud();tick(.2)}tip.textContent=snd?'Звук включён: счётчик Гейгера у курсора и взрывы':'Звук выключен'});
-btn('Очистить','var(--bd)',()=>{g.fill(0);tp.fill(AMB);src.fill(0);cnt.fill(0);pend=[];dl=[];deb=[];sw=[];nFis=0;eEl=0;hF=0;hE=0},ICO.clr);
-btn('Шаблоны','var(--bd)',()=>openTpl(),ICO.tpl);
+{const bx=document.getElementById('stl');let cur='3';try{cur=localStorage.getItem('sbSty')||'3'}catch(e){}if(!/^[123]$/.test(cur))cur='3';
+const set=n=>{document.body.dataset.st=n;try{localStorage.setItem('sbSty',n)}catch(e){}[...bx.children].forEach(q=>q.classList.toggle('sel',q.dataset.s===n))};
+['Простой','Средний','Детализированный'].forEach((l,i)=>{const q=document.createElement('button');q.textContent=l;q.dataset.s=String(i+1);q.style.cssText='flex:1;font-size:13px;padding:6px 4px';q.onclick=()=>set(q.dataset.s);bx.appendChild(q)});set(cur)}
+const RB=3;
+function radField(){const w=Math.ceil(W/RB),h=Math.ceil(H/RB);if(!rfD||rfW!==w||rfH!==h){rfD=new Float32Array(w*h);rfW=w;rfH=h}rfD.fill(0);
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++){const s=RW[g[y*W+x]];if(!s)continue;
+    const by0=Math.max(0,((y-10)/RB)|0),by1=Math.min(h-1,((y+10)/RB)|0),bx0=Math.max(0,((x-10)/RB)|0),bx1=Math.min(w-1,((x+10)/RB)|0);
+    for(let by=by0;by<=by1;by++)for(let bx=bx0;bx<=bx1;bx++){const X=Math.min(W-1,bx*RB+1),Y=Math.min(H-1,by*RB+1),dx=X-x,dy=Y-y,d=dx*dx+dy*dy;if(d>100)continue;let f=1;const n=Math.max(Math.abs(dx),Math.abs(dy));
+      for(let i=1;i<n;i++)f*=ATT[g[Math.round(y+dy*i/n)*W+Math.round(x+dx*i/n)]];rfD[by*w+bx]+=s/(1+d*.5)*f*20}}
+  for(let i=0;i<rfD.length;i++)rfD[i]=Math.min(1,Math.log10(1+rfD[i])/3.5)}
+const chb=ovb('Заряды','<path d="M12 4v8M8 8h8M6 18h12"/>',b=>{chv=!chv;b.classList.toggle('on',chv)});chb.classList.add('on');
+const rvb=ovb('Радиация','<circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="12" r="9"/><path d="M12 10.4V4M13.4 12.8l5.5 3.2M10.6 12.8L5.1 16"/>',b=>{rv=!rv;rfD=null;rvT=0;b.classList.toggle('on',rv)});
+btn('Очистить','var(--bd)',()=>{ch.fill(0);g.fill(0);tp.fill(AMB);src.fill(0);cnt.fill(0);pend=[];dl=[];deb=[];sw=[];nFis=0;eEl=0;hF=0;hE=0},ICO.clr);
 document.getElementById('sz').oninput=e=>{rad=+e.target.value};
 
 // настройки и сохранения миров (IndexedDB)
@@ -632,6 +739,7 @@ addEventListener('keydown',e=>{if(e.code==='Space'&&!e.repeat&&e.target.tagName!
 const bs=$('bs'),bd=$('bd'),hud=$('hud'),sp=$('sp'),spv=$('spv'),SPDS=[0,.1,.25,.5,1,2,3,4];
 let spd=1,acc=0,showS=false,hT=0,hF=0,hE=0,nFis=0,eEl=0,subs=0,tvis=null,simT=0,ex=null,lastS=null,lastE=null,lam=.0006;
 sp.oninput=()=>{const v=SPDS[+sp.value];paused=v===0;if(v)spd=v;spv.textContent=v?'×'+v:'пауза'};
+let showStart=()=>{};
 (()=>{const S=$('st'),cn=$('sc'),cx=cn.getContext('2d'),SW=192,SH=108,GD=document.querySelector('.gd');cn.width=SW;cn.height=SH;setPause(true);
  const rg=a=>()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
  function mk(seed){const r=rg(seed),c=document.createElement('canvas');c.width=SW;c.height=SH;const x=c.getContext('2d'),gy=78,pal=[['#0b1030','#3a2a5a','#e8805a'],['#05131f','#12385a','#58b6c8'],['#120b1c','#4a1f4a','#f0a050'],['#0a1a14','#1d4a3a','#9ad07a']][r()*4|0];
@@ -648,8 +756,8 @@ sp.oninput=()=>{const v=SPDS[+sp.value];paused=v===0;if(v)spd=v;spv.textContent=
    else{x.fillStyle='#3a3f4c';x.fillRect(px+w/2,gy-26,2,26);x.fillRect(px+w/2-6,gy-24,14,1);x.fillRect(px+w/2-4,gy-19,10,1);lamps.push([px+w/2|0,gy-27])}
    px+=w+4+r()*10}
   x.fillStyle='#2a303d';x.fillRect(0,gy+4,SW,2);return{c,lamps,fumes}}
- let A=mk(Math.random()*1e9|0),B=null,fa=1,tt=0,parts=[];
- function draw(){if(S.hidden)return;tt++;if(tt%720===0){B=A;A=mk(Math.random()*1e9|0);fa=0;parts=[]}
+ let run=true,A=mk(Math.random()*1e9|0),B=null,fa=1,tt=0,parts=[];
+ function draw(){if(S.hidden){run=false;return}tt++;if(tt%720===0){B=A;A=mk(Math.random()*1e9|0);fa=0;parts=[]}
   if(B&&fa<1){cx.globalAlpha=1;cx.drawImage(B.c,0,0);fa+=.02;cx.globalAlpha=Math.min(1,fa)}else cx.globalAlpha=1;cx.drawImage(A.c,0,0);cx.globalAlpha=1;
   for(const f of A.fumes)if(Math.random()<.22*f[2])parts.push([f[0]+Math.random()*4-2,f[1],0,1]);
   parts=parts.filter(p=>p[3]>0);for(const p of parts){p[1]-=.25;p[0]+=.05+Math.sin(p[1]/6)*.1;p[3]-=.006;cx.fillStyle='rgba(225,230,240,'+p[3]*.45+')';const s=2+(1-p[3])*5|0;cx.fillRect(p[0]-s/2|0,p[1]|0,s,s)}
@@ -658,6 +766,7 @@ sp.oninput=()=>{const v=SPDS[+sp.value];paused=v===0;if(v)spd=v;spv.textContent=
  $('sp1').onclick=()=>{S.hidden=true;setPause(false)};
  $('sset').onclick=()=>{GD.open=false;menu.hidden=false};
  $('sbk').onclick=()=>{GD.open=true;menu.hidden=false};
+ showStart=()=>{S.hidden=false;setPause(true);if(!run){run=true;draw()}};
  draw()})();
 bd.onclick=()=>{panMode=!panMode;bd.classList.toggle('on',panMode);if(panMode&&!hasP)tip.textContent='Рука: коснись клетки, чтобы увидеть её данные';bd.blur()};
 bs.onclick=()=>{showS=!showS;bs.classList.toggle('on',showS);hud.hidden=!showS;hT=performance.now();hF=nFis;hE=eEl;if(showS)hudUpd(true);bs.blur()};
@@ -670,7 +779,7 @@ function hudUpd(force){const now=performance.now();if(!force&&now-hT<500)return;
   if(!force){hT=now;hF=nFis;hE=eEl}
   let mx=-1e9,rc=0;for(let i=0;i<W*H;i++){if(g[i]&&tp[i]>mx)mx=tp[i];if(RAD[g[i]])rc++}
   const th=nFis*200;
-  hud.textContent='Деления: '+Math.round(rf)+'/с (всего '+nFis+')\nТепло реактора: '+Math.round(th)+' у.е.\nЭлектричество: '+Math.round(eEl)+' у.е. · '+Math.round(re)+'/с\nКПД: '+(th?(eEl/th*100).toFixed(1):'0.0')+' %\nМакс. темп.: '+(mx>-1e9?Math.round(mx):'—')+' °C\nРадиоактивных клеток: '+rc+'\nРадиация у курсора: '+(hasP?radAt(px,py)+' мкЗв/ч':'—')}
+  hud.textContent='Деления: '+Math.round(rf)+'/с (всего '+nFis+')\nТепло реактора: '+Math.round(th)+' у.е.\nЭлектричество: '+Math.round(eEl)+' у.е. · '+Math.round(re)+'/с\nКПД: '+(th?(eEl/th*100).toFixed(1):'0.0')+' %\nМакс. темп.: '+(mx>-1e9?Math.round(mx):'—')+' °C\nРадиоактивных клеток: '+rc+'\nРадиация у курсора: '+(hasP?radAt(px,py)+' мкЗв/ч':'—')+'\nЗаряд у курсора: '+(hasP&&px>=0&&py>=0&&px<W&&py<H?(()=>{const q=Math.round(ch[py*W+px]);return(q>0?'+':'')+q+' у.е.'})():'—')}
 function openMenu(o){menu.hidden=!o;if(o){co.checked=opn;wm.textContent='';listW()}}
 $('gear').onclick=()=>openMenu(true);$('x').onclick=()=>openMenu(false);$('sv').onclick=()=>save();
 menu.addEventListener('pointerdown',e=>{if(e.target===menu)openMenu(false)});
@@ -685,31 +794,48 @@ function snap(){
   for(let i=0;i<n;i++){dv.setInt16(2*n+2*i,Math.max(-32768,Math.min(32767,Math.round(tp[i]))),true);dv.setUint16(4*n+2*i,cnt[i],true)}
   return b;
 }
+const DV=()=>(matchMedia('(pointer:coarse)').matches||Math.min(innerWidth,innerHeight)<600)?'p':'c',devOf=r=>r.dev||(r.w<r.h?'p':'c');
+const b64=d=>{let t='';for(let i=0;i<d.length;i+=8192)t+=String.fromCharCode.apply(null,d.subarray(i,i+8192));return btoa(t)},unb64=t=>Uint8Array.from(atob(t),c=>c.charCodeAt(0));
 async function save(){
-  try{const z=typeof CompressionStream!=='undefined',w=W,h=H,d=await zip(snap(),true),id=Date.now();
-    await tx('readwrite',s=>s.put({id,w,h,z,d}));wm.textContent='Мир сохранён';listW()}
+  try{const z=typeof CompressionStream!=='undefined',w=W,h=H,d=await zip(snap(),true),id=Date.now(),dev=DV();
+    await tx('readwrite',q=>q.put({id,w,h,z,d,dev}));wm.textContent='Мир сохранён';listW()}
   catch(e){wm.textContent='Не удалось сохранить: хранилище недоступно'}
 }
 async function load(r){
-  try{const u=r.z?await zip(r.d,false):r.d,n=r.w*r.h,dv=new DataView(u.buffer,u.byteOffset,u.byteLength);
-    g.fill(0);tp.fill(AMB);src.fill(0);cnt.fill(0);pend=[];dl=[];fx=[];deb=[];sw=[];
-    for(let y=0;y<Math.min(H,r.h);y++)for(let x=0;x<Math.min(W,r.w);x++){
-      const i=y*r.w+x,p=y*W+x;g[p]=u[i];src[p]=u[n+i];tp[p]=dv.getInt16(2*n+2*i,true);cnt[p]=dv.getUint16(4*n+2*i,true)}
+  try{const u=r.z?await zip(r.d,false):r.d,rw=r.w,rh=r.h,n=rw*rh,dv=new DataView(u.buffer,u.byteOffset,u.byteLength),ax=(W-rw)>>1,ay=H-rh;
+    ch.fill(0);g.fill(0);tp.fill(AMB);src.fill(0);cnt.fill(0);pend=[];dl=[];fx=[];deb=[];sw=[];
+    for(let y=0;y<rh;y++){const Y=y+ay;if(Y<0||Y>=H)continue;for(let x=0;x<rw;x++){const X=x+ax;if(X<0||X>=W)continue;
+      const i=y*rw+x,p=Y*W+X;g[p]=u[i];src[p]=u[n+i];tp[p]=dv.getInt16(2*n+2*i,true);cnt[p]=dv.getUint16(4*n+2*i,true)}}
     openMenu(false)}
   catch(e){wm.textContent='Не удалось загрузить мир'}
 }
+function expW(r){const code=['SBX1',r.w,r.h,r.z?1:0,devOf(r),b64(r.d)].join('|');
+  wm.textContent='';const ta=document.createElement('textarea');ta.className='cd';ta.readOnly=true;ta.value=code;wm.appendChild(ta);
+  const m=document.createElement('div');m.textContent='Код мира. Вставь его в «Импорт» на другом устройстве.';wm.appendChild(m);ta.focus();ta.select();
+  try{navigator.clipboard.writeText(code).then(()=>{m.textContent='Код скопирован. Вставь его в «Импорт» на другом устройстве.'},()=>{})}catch(e){}}
 async function listW(){
   wl.textContent='';
-  try{const a=await tx('readonly',s=>s.getAll());
+  try{const a=await tx('readonly',q=>q.getAll());
     if(!a||!a.length){wl.textContent='Сохранённых миров пока нет';return}
-    a.sort((p,q)=>q.id-p.id).forEach(r=>{
-      const row=document.createElement('div');row.className='wr';
-      const nm=document.createElement('span');nm.textContent=new Date(r.id).toLocaleString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
-      const lb=document.createElement('button');lb.textContent='Загрузить';lb.onclick=()=>load(r);
-      const db=document.createElement('button');db.textContent='✕';db.onclick=async()=>{try{await tx('readwrite',s=>s.delete(r.id))}catch(e){}listW()};
-      row.append(nm,lb,db);wl.appendChild(row)})}
+    const me=DV();
+    for(const k of [me,me==='p'?'c':'p']){
+      const L=a.filter(r=>devOf(r)===k).sort((p,q)=>q.id-p.id);if(!L.length)continue;
+      const hd=document.createElement('div');hd.className='wh';hd.textContent=(k==='p'?'Телефонные':'Компьютерные')+(k===me?' (это устройство)':' (другой размер поля)');wl.appendChild(hd);
+      L.forEach(r=>{
+        const row=document.createElement('div');row.className='wr';
+        const nm=document.createElement('span');nm.textContent=new Date(r.id).toLocaleString('ru-RU',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+' · '+r.w+'×'+r.h;
+        const lb=document.createElement('button');lb.textContent='Загрузить';lb.onclick=()=>load(r);
+        const eb=document.createElement('button');eb.textContent='Код';eb.onclick=()=>expW(r);
+        const db=document.createElement('button');db.textContent='✕';db.onclick=async()=>{try{await tx('readwrite',q=>q.delete(r.id))}catch(e){}listW()};
+        row.append(nm,lb,eb,db);wl.appendChild(row)})}}
   catch(e){wl.textContent='Сохранения недоступны в этом браузере'}
 }
+$('imb').onclick=async()=>{try{const t=$('imp').value.replace(/\s/g,'').split('|');if(t.length!==6||t[0]!=='SBX1')throw 0;
+  const w=+t[1],h=+t[2],z=t[3]==='1',dev=t[4]==='p'?'p':'c';if(!(w>0&&h>0&&w*h<=4e6))throw 0;
+  const d=unb64(t[5]),u=z?await zip(d,false):d;if(u.length!==w*h*6)throw 0;
+  await tx('readwrite',q=>q.put({id:Date.now(),w,h,z,d,dev}));$('imp').value='';wm.textContent='Мир импортирован';listW()}
+  catch(e){wm.textContent='Код не подходит: проверь, что он скопирован целиком'}};
+$('hm').onclick=()=>{openMenu(false);showStart()};
 
 // шаблоны: готовые установки, ставятся по центру внизу поля
 const TPL=[
@@ -751,8 +877,8 @@ function place(k){
   for(let j=0;j<h;j++)for(let i=0;i<w;i++){const p=(y0+j)*W+x0+i,t=mp[j*w+i];g[p]=t;src[p]=sr[j*w+i];cnt[p]=0;tp[p]=BT[t]??AMB}
   pend=[];dl=[];deb=[];sw=[];return true;
 }
-const tm=$('tm'),tl=$('tl'),tmsg=$('tmsg');
-function openTpl(o=true){tm.hidden=!o;tmsg.textContent=''}
+const tpd=$('tpd'),tl=$('tl'),tmsg=$('tmsg');
+function openTpl(o=true){tmsg.textContent='';openMenu(o);if(o)tpd.open=true}
 TPL.forEach((T,k)=>{
   const c=document.createElement('div');c.className='tp';
   const a=document.createElement('b');a.textContent=T.n;
@@ -761,7 +887,7 @@ TPL.forEach((T,k)=>{
   c.append(a,s,bt);tl.appendChild(c)});
 // эксперименты: готовая установка, замер и вывод; график рисуется на экране
 const xp=$('xp'),xt=$('xt'),xg=$('xg'),xr=$('xr'),xgc=xg.getContext('2d');
-function clearAll(){g.fill(0);tp.fill(AMB);src.fill(0);cnt.fill(0);pend=[];dl=[];deb=[];sw=[];nFis=0;eEl=0;hF=0;hE=0;simT=0}
+function clearAll(){ch.fill(0);g.fill(0);tp.fill(AMB);src.fill(0);cnt.fill(0);pend=[];dl=[];deb=[];sw=[];nFis=0;eEl=0;hF=0;hE=0;simT=0}
 function fillR(x,y,w,h,t){for(let j=y;j<y+h;j++)for(let i=x;i<x+w;i++)if(i>=0&&j>=0&&i<W&&j<H){const q=j*W+i;g[q]=t;tp[q]=BT[t]??AMB;cnt[q]=0;src[q]=0}}
 const EXPS=[
 {n:'Критическая масса',d:'Блок из урана-235 с источником нейтронов в металлическом корпусе. Выбери размер, замедлитель, густоту топлива и борные стержни. График: деления за 0,5 с и максимальная температура.',
@@ -804,26 +930,44 @@ const EXPS=[
 function exDraw(){const S=lastS,E=lastE;xgc.clearRect(0,0,170,70);if(!S||!S.length||!S[0].length)return;let mx=1;for(const a of S)for(const v of a)if(v>mx)mx=v;
   const N=Math.max(1,Math.ceil(E.dur/60));S.forEach((a,i)=>{let m=mx;if(E.sep){m=1;for(const v of a)if(v>m)m=v}xgc.strokeStyle=E.cols[i];xgc.beginPath();a.forEach((v,j)=>{const X=4+162*j/N,Y=66-60*v/m;j?xgc.lineTo(X,Y):xgc.moveTo(X,Y)});xgc.stroke()})}
 function startExp(k,P){const E=EXPS[k],m=E.setup(P);if(m){tmsg.textContent=m;return}
-  tmsg.textContent='';openTpl(false);ex={E,S:E.names.map(()=>[]),end:simT+E.dur,next:simT+60};lastS=ex.S;lastE=E;
+  tmsg.textContent='';openTpl(false);ex={E,k,P,S:E.names.map(()=>[]),end:simT+E.dur,next:simT+60};lastS=ex.S;lastE=E;
   xt.innerHTML=E.n+(E.names.length?'<br>'+E.names.map((n,i)=>'<span style="color:'+E.cols[i]+'">'+n+'</span>').join(' · '):'');
   xp.hidden=false;xr.textContent=E.dur?'Идёт эксперимент… 0 с из '+Math.round(E.dur/120):'';exDraw();if(!E.dur)exFinish()}
 function exTick(){const E=ex.E;
   if(simT>=ex.next){ex.next+=60;E.sample().forEach((v,i)=>ex.S[i].push(v));exDraw();xr.textContent='Идёт эксперимент… '+Math.round(simT/120)+' с из '+Math.round(E.dur/120)}
   if(simT>=ex.end)exFinish()}
-function exFinish(){const E=ex.E;if(E.dur)E.sample().forEach((v,i)=>ex.S[i].push(v));exDraw();xr.textContent=E.verdict(ex.S);ex=null}
+function exG(c,w,h,S,E,fs){c.clearRect(0,0,w,h);const b=fs+10,ph=h-b-6,pw_=w-12;c.font=fs+'px system-ui';c.lineWidth=1;c.strokeStyle='rgba(255,255,255,.12)';for(let i=0;i<=4;i++){const y=6+ph*i/4;c.beginPath();c.moveTo(0,y);c.lineTo(w,y);c.stroke()}
+  let mx=1;for(const a of S)for(const v of a)if(v>mx)mx=v;const N=Math.max(1,Math.ceil(E.dur/60));
+  S.forEach((a,i)=>{let m=mx;if(E.sep){m=1;for(const v of a)if(v>m)m=v}c.strokeStyle=E.cols[i];c.lineWidth=2.5;c.beginPath();a.forEach((v,j)=>{const X=6+pw_*j/N,Y=6+ph-ph*Math.max(0,v)/m;j?c.lineTo(X,Y):c.moveTo(X,Y)});c.stroke()});
+  c.fillStyle='rgba(230,233,240,.7)';c.textAlign='left';c.fillText('0 с',6,h-4);c.textAlign='right';c.fillText(Math.round(E.dur/120)+' с',w-6,h-4);c.textAlign='left'}
+function exCard(E,x,txt){const old=document.getElementById('xcard');if(old)old.remove();
+  const o=document.createElement('div');o.id='xcard';o.style.cssText='position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:12px';
+  const c=document.createElement('div');c.style.cssText='background:#1b1e27;color:#e6e9f0;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px;width:min(94vw,380px);max-height:92vh;overflow:auto;font:14px/1.4 system-ui,sans-serif';
+  const st=E.names.map((n,i)=>{const a=x.S[i];return '<span style="color:'+E.cols[i]+'">'+n+'</span>: пик '+Math.max(...a)+', в конце '+a[a.length-1]}).join('<br>');
+  c.innerHTML='<b style="font-size:16px">'+E.n+'</b><div style="opacity:.7;font-size:12px">'+(E.dur?'Длительность '+Math.round(E.dur/120)+' с':'Мгновенный замер')+'</div><p style="margin:8px 0">'+txt+'</p>'+(E.names.length?'<canvas width="340" height="150" style="width:100%;background:rgba(0,0,0,.25);border-radius:8px"></canvas><div style="font-size:12px;margin:6px 0">'+st+'</div>':'');
+  const cv=c.querySelector('canvas');if(cv)exG(cv.getContext('2d'),340,150,x.S,E,11);
+  const row=document.createElement('div');row.style.cssText='display:flex;gap:6px;flex-wrap:wrap;margin-top:8px';c.appendChild(row);
+  const mk=(l,f)=>{const b=document.createElement('button');b.textContent=l;b.style.cssText='flex:1;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:#2a2f3c;color:#e6e9f0;font:inherit;cursor:pointer';b.onclick=f;row.appendChild(b)};
+  mk('Повторить',()=>{o.remove();startExp(x.k,x.P)});
+  mk('Сохранить картинку',()=>{const w=720,cb=document.createElement('canvas');cb.width=w;cb.height=700;const q=cb.getContext('2d');q.fillStyle='#1b1e27';q.fillRect(0,0,w,700);q.fillStyle='#e6e9f0';q.font='bold 30px system-ui';q.fillText(E.n,24,46);q.font='20px system-ui';let y=84,ln='';
+    for(const wd of txt.split(' ')){const t=ln?ln+' '+wd:wd;if(q.measureText(t).width>w-48){q.fillText(ln,24,y);y+=28;ln=wd}else ln=t}q.fillText(ln,24,y);y+=20;
+    if(E.names.length){const gc=document.createElement('canvas');gc.width=672;gc.height=300;exG(gc.getContext('2d'),672,300,x.S,E,16);q.drawImage(gc,24,y);y+=316;E.names.forEach((n,i)=>{const a=x.S[i];q.fillStyle=E.cols[i];q.fillText(n+': пик '+Math.max(...a)+', в конце '+a[a.length-1],24,y);y+=26})}
+    const fc=document.createElement('canvas');fc.width=w;fc.height=y+12;fc.getContext('2d').drawImage(cb,0,0);
+    fc.toBlob(async b=>{try{const f=new File([b],'experiment.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}}catch(e){}
+      const im=document.createElement('img');im.src=fc.toDataURL();im.style.cssText='width:100%;border-radius:8px;margin-top:8px';c.appendChild(im);const m=document.createElement('div');m.style.cssText='font-size:12px;opacity:.7';m.textContent='Нажми и удерживай картинку, чтобы сохранить (или сделай скриншот)';c.appendChild(m)})});
+  mk('Закрыть',()=>o.remove());
+  o.onclick=e=>{if(e.target===o)o.remove()};o.appendChild(c);document.body.appendChild(o)}
+function exFinish(){const E=ex.E;if(E.dur)E.sample().forEach((v,i)=>ex.S[i].push(v));exDraw();const v=E.verdict(ex.S);xr.textContent=v;exCard(E,ex,v);ex=null}
 (function(){const h=document.createElement('b');h.textContent='Эксперименты';h.style.marginTop='6px';tl.appendChild(h);
   EXPS.forEach((E,k)=>{const c=document.createElement('div');c.className='tp';const a=document.createElement('b');a.textContent=E.n;const sm=document.createElement('small');sm.textContent=E.d;c.append(a,sm);
     const sl=E.par.map(p=>{const r=document.createElement('label');r.className='pr';const sp=document.createElement('span');sp.textContent=p.l;const se=document.createElement('select');p.o.forEach((o,i)=>{const op=document.createElement('option');op.value=i;op.textContent=o[0];se.appendChild(op)});se.value=p.v;r.append(sp,se);c.appendChild(r);return se});
     const bt=document.createElement('button');bt.textContent='Запустить';bt.onclick=()=>{const P={};E.par.forEach((p,i)=>P[p.k]=p.o[+sl[i].value][1]);startExp(k,P)};c.appendChild(bt);tl.appendChild(c)})})();
 $('bx').onclick=()=>openTpl(true);
 $('xs').onclick=()=>{ex=null;xp.hidden=true};
-$('tx').onclick=()=>openTpl(false);
-tm.addEventListener('pointerdown',e=>{if(e.target===tm)openTpl(false)});
-addEventListener('keydown',e=>{if(e.key==='Escape')openTpl(false)});
 
 function loop(){
   if(down)paint(px,py);
-  elec(!paused);if(!paused){acc+=spd*2;let n=0;while(acc>=1&&n<24){step();simT++;acc--;n++;if((++subs&1)===0){diffuse();shock();debris()}}if(acc>24)acc=0;if(ex)exTick()}draw();shakeUpd();if(showS)hudUpd();
+  elec(!paused);if(!paused)estat();if(!paused){acc+=spd*2;let n=0;while(acc>=1&&n<24){step();simT++;acc--;n++;if((++subs&1)===0){diffuse();shock();debris()}}if(acc>24)acc=0;if(ex)exTick()}draw();shakeUpd();if(showS)hudUpd();
   if(hasP&&px>=0&&px<W&&py>=0&&py<H){const p=py*W+px;const u=g[p];let s=(N[u]?N[u]+' · ':(panMode?'Пусто · ':''))+Math.round(tp[p])+' °C';if(pw[p])s+=' · под током';if(u===55)s+=' · качает '+['вверх','вправо','вниз','влево'][src[p]&3];if(u===52)s+=' · '+(cnt[p]>8?'вращается':'стоит');else if(FIS[u]&&cnt[p])s+=' · делений '+cnt[p];const rv=radAt(px,py);let e2='';if(panMode&&u){let n=0,sT=0,mT=-1e9;for(let q=0;q<W*H;q++)if(g[q]===u){n++;sT+=tp[q];if(tp[q]>mT)mT=tp[q]}e2='\nНа поле: '+n+' клеток, средняя '+Math.round(sT/n)+'°, макс. '+Math.round(mT)+'°'}tip.textContent=s+'\n☢ '+rv+' мкЗв/ч ('+radLbl(rv)+')'+e2}
   requestAnimationFrame(loop);
 }
